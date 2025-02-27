@@ -3,10 +3,18 @@
 
 function Message() { // naming fucntions with PascalCasing following the convention
     
-    // here we describe how the UI should look like when we use this component
-    // for example, it renders this :
+    // for dynamic behavior : 
 
-    return <h1>hello world</h1>;
+    const name = null;
+
+    if (name) 
+        
+        return <h1>hello, {name}</h1>; // thiese braces we can write any js expression
+        // a js expression is any code that produces/returns a value, so you can even call a fucntion inside those {}
+    
+    return <h1>hello world</h1>; 
+    
+
 
     // This type of code is called JSX : js XMl that will be compiled to js code, you can check its equivalent in js on babeljs.js/repl
 
