@@ -5,6 +5,7 @@ function ListGroup() {
     
     // instead of a div or something like that, we have a better solution, a fragment for multiple elements return
     <Fragment>
+        <h1>Heading here for the sake of the example!</h1>
         <ul className="list-group">
           <li className="list-group-item">An item</li>
           <li className="list-group-item">A second item</li>
