@@ -1,17 +1,9 @@
-import Message from "./Message" // the period '.' means the current folder
+import ListGroup from "./components/ListGroup" // we need this one this time
 
 function App() {
 
-  // let's say that we wanna have the Message component inside a div element 
-  // first, you need to import it in order to use it!
-  
-  // the sweet spot is going to be hit when you know that the component are used just like html tags, opened and closed!
-
-  return <div><Message></Message></div>
-
-  // You can use the self-closing syntax <Message />
-
-
+  return <div><ListGroup/></div> // we wanna display a list of elemnets here, so we gonna get some help from the bootstrap technology
+  // go to the docs in the bootstrap website and search of ListGroup under the components section to find out how to style it, copy the html needed for it!
 }
 
 export default App // for it to be used somewhere else
