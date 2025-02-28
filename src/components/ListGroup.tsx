@@ -4,9 +4,10 @@ import { useState } from "react";
 interface ListGroupProps {
   items: string[]; // still using type annotations
   heading: string;
+  onSelectItem: (item: string) => void; // the naming is conventional, here we are not defining anything, we are just decalring what is what, so you'd know that this prop is a function that returns nothing and its up to you what function you wanna pass after
 }
 
-function ListGroup( { items, heading } /* we pass the items and the heading like this so we have direct access to them without dot notation  */ : ListGroupProps /* passing a variable of the type ListGroupProps*/) { // if you pass this, you'll have to pass arguments in the App.tsx or you'll have some errors
+function ListGroup( { items, heading, onSelectItem } /* we pass the items and the heading like this so we have direct access to them without dot notation  */ : ListGroupProps /* passing a variable of the type ListGroupProps*/) { // if you pass this, you'll have to pass arguments in the App.tsx or you'll have some errors
 
   // let selectedIndex = -1; only write this is you're not going to use the [selectedIndex, setSelectedIndex] = useState(-1); because it redeclares the variable inside
 
@@ -38,6 +39,7 @@ function ListGroup( { items, heading } /* we pass the items and the heading like
               key={item}
               onClick={() => {
                 setSelectedIndex(index); // passing the index to the updater function to update the state variable selectedIndex
+                onSelectItem(item);
               }}
             >
               {item}
