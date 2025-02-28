@@ -8,6 +8,12 @@ function ListGroup() {
 
   items = [];
 
+  const getMessage = () => { // using a function is better than using a const because we can pass arguments to it for more flexibility and dynamic behavior
+    // if you don't have a complex structure of a code, just use a const
+    return items.length === 0 ? <p>no items found!</p> : null; // with this we don't have to pollute our code and make it cryptic!
+  }
+
+  
   // this is an example of what it looks like to render a conditional
   
   return (
@@ -18,8 +24,8 @@ function ListGroup() {
     // add the proper class to maintain the style
     <>
       <h1>Heading here for the sake of the example!</h1>
-      
-      {items.length === 0 ? <p>no items in this list!</p> : null }
+
+      {getMessage()}      
 
       <ul className="list-group">
         {items.map((item) => (
