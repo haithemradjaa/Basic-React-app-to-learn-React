@@ -1,13 +1,15 @@
 function ListGroup() {
-  const items = [
+  let items = [
     // for a dynamic showcase of data in our listgroup
     "Youcef",
     "Ahmed",
     "Zaki",
   ];
 
-  // since we don't have a for loop in jsx to display these in it, we need to map through this list and and convert each item in it to an 'li' element to be returned dynamically
+  items = [];
 
+  // this is an example of what it looks like to render a conditional
+  
   return (
     // '()' important if you wanna break you jsx into multiple lines!
 
@@ -16,6 +18,9 @@ function ListGroup() {
     // add the proper class to maintain the style
     <>
       <h1>Heading here for the sake of the example!</h1>
+      
+      {items.length === 0 ? <p>no items in this list!</p> : null }
+
       <ul className="list-group">
         {items.map((item) => (
           <li className="list-group-item" key={item}>{item}</li>
