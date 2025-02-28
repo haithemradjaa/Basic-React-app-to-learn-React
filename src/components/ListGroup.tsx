@@ -1,3 +1,6 @@
+
+import { MouseEvent } from 'react'; // this is for specifying the type of the event in the handleClick function
+
 function ListGroup() {
   let items = [
     // for a dynamic showcase of data in our listgroup
@@ -6,34 +9,29 @@ function ListGroup() {
     "Zaki",
   ];
 
-  // items = [];
+  const handleClick = (e : MouseEvent /* this is called type annotation, one the beauties of ts*/) => console.log(item, index, e); // you'll get a warning that e has an 'any' type, this is giving to you by the ts compiler, so you need to specify the type for type safety and syntax complition
+  // when you reference this function you do so just by mentioning its name not by calling it with '()' , calling it will let it run even without an event happening!!
 
-  
-  // this is an example of what it looks like to render a conditional
-  
   return (
-    // '()' important if you wanna break you jsx into multiple lines!
-
-    // instead of a div or something like that, we have a better solution, a fragment for multiple elements return, but we are going to have an error because in jsx we can only use html elements and react components!
-    // to fix that problem, wrap that expression in '{}'
-    // add the proper class to maintain the style
-    // in this example, if the list is empty, we have nothing rendered on the screen!
+    // we added the index argument to the map function to keep track of the current item being operated on
     <>
       <h1>Heading here for the sake of the example!</h1>
 
-      { !(items.length === 0) &&       
-
-      <ul className="list-group">
-        {items.map((item) => (
-          <li className="list-group-item" key={item}>{item}</li>
-        ))}
-      </ul>
-    }
+      {!(items.length === 0) && (
+        <ul className="list-group">
+          {items.map((item, index) => (
+            <li
+              className="list-group-item"
+              key={item}
+              onClick={handleClick}
+            >
+              {item}
+            </li>
+          ))}
+        </ul>
+      )}
     </>
   );
-  // this is the compatible jsx code with the bootstrap styling brought from the bootstrap docs
-  // you'll get an error first bcz 'class' is a reserved word in js and ts so change it all to className, for multiple selection press ctrl + d and keep pressing d untill you select them all and then type your changes!
-  // press esc tp disable multi cursor editing
 }
 
 export default ListGroup;
