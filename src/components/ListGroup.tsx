@@ -1,3 +1,4 @@
+import { useState } from "react";
 
 
 function ListGroup() {
@@ -8,8 +9,13 @@ function ListGroup() {
     "Zaki",
   ];
 
-  let selectedIndex = 0; // to keep track of what item is selected on the list, -1 means no item is selected
-  // this will select the first item in the list on the page
+  let selectedIndex = -1;
+
+  // this is a built in function in react that let us manage state, it's a hook
+  // a hook in react is a function that let us use built in features in react, so this is a state hook
+  useState(() => {
+    
+  })
 
   return (
     // we added the index argument to the map function to keep track of the current item being operated on
@@ -23,7 +29,8 @@ function ListGroup() {
               className={ selectedIndex === index ? 'list-group-item active' : 'list-group-item'}
               key={item}
               onClick={() => {
-
+                selectedIndex = index; // this will change the index of the item that should be highlighted to the clicked element
+                // this variable here is never gonna do its work unless react is aware of it as a state changing variable, meaning; its data might changes over time, for that we use useState
               }}
             >
               {item}
