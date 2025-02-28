@@ -1,5 +1,4 @@
 
-import { MouseEvent } from 'react'; // this is for specifying the type of the event in the handleClick function
 
 function ListGroup() {
   let items = [
@@ -9,8 +8,8 @@ function ListGroup() {
     "Zaki",
   ];
 
-  const handleClick = (e : MouseEvent /* this is called type annotation, one the beauties of ts*/) => console.log(item, index, e); // you'll get a warning that e has an 'any' type, this is giving to you by the ts compiler, so you need to specify the type for type safety and syntax complition
-  // when you reference this function you do so just by mentioning its name not by calling it with '()' , calling it will let it run even without an event happening!!
+  let selectedIndex = 0; // to keep track of what item is selected on the list, -1 means no item is selected
+  // this will select the first item in the list on the page
 
   return (
     // we added the index argument to the map function to keep track of the current item being operated on
@@ -21,9 +20,11 @@ function ListGroup() {
         <ul className="list-group">
           {items.map((item, index) => (
             <li
-              className="list-group-item"
+              className={ selectedIndex === index ? 'list-group-item active' : 'list-group-item'}
               key={item}
-              onClick={handleClick}
+              onClick={() => {
+
+              }}
             >
               {item}
             </li>
