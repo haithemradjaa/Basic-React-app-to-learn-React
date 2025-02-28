@@ -1,6 +1,12 @@
 import { useState } from "react";
 
-function ListGroup() {
+// here we are declaring an interface that holds some properties for us to reuse; mainly to make the ListGroup reusable
+interface ListGroupProps {
+  items: string[]; // still using type annotations
+  heading: string;
+}
+
+function ListGroup(ListGroupProps : ListGroupProps /* passing a variable of the type ListGroupProps*/) { // 
   let items = [
     // for a dynamic showcase of data in our listgroup
     "Youcef",
