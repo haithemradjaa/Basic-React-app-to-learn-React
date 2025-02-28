@@ -10,5 +10,6 @@ function App() {
   ]; // we bring the list here in order for us to pass it directly
 
   return <div><ListGroup items={items} heading="List of names"/></div> // we pass the arguments just like setting the html attributes
+}
 
 export default App // for it to be used somewhere else

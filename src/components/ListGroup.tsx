@@ -6,13 +6,7 @@ interface ListGroupProps {
   heading: string;
 }
 
-function ListGroup(ListGroupProps : ListGroupProps /* passing a variable of the type ListGroupProps*/) { // 
-  let items = [
-    // for a dynamic showcase of data in our listgroup
-    "Youcef",
-    "Ahmed",
-    "Zaki",
-  ];
+function ListGroup( { items, heading } /* we pass the items and the heading like this so we have direct access to them without dot notation  */ : ListGroupProps /* passing a variable of the type ListGroupProps*/) { // if you pass this, you'll have to pass arguments in the App.tsx or you'll have some errors
 
   // let selectedIndex = -1; only write this is you're not going to use the [selectedIndex, setSelectedIndex] = useState(-1); because it redeclares the variable inside
 
@@ -30,7 +24,7 @@ function ListGroup(ListGroupProps : ListGroupProps /* passing a variable of the 
   return (
     // we added the index argument to the map function to keep track of the current item being operated on
     <>
-      <h1>Heading here for the sake of the example!</h1>
+      <h1>{heading}</h1>
 
       {!(items.length === 0) && (
         <ul className="list-group">
