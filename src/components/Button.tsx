@@ -1,7 +1,14 @@
 interface ButtonProps {
   children: string;
-  color? /** this is an optional prop, and you need to specify this to the ts compiler not to expect it when you want react to build your component */: string; // to be able to choose what color the button will have dynamically!
-  // in this color prop, the values must match what bootstrap defined, like 'primary' for blue buttons
+  color?:
+    | "primary"
+    | "secondary"
+    | "success"
+    | "danger"
+    | "warning"
+    | "info"
+    | "light"
+    | "dark"; // like this, we specified the ONLY option for the color prop to have, if you pass another value that's not mentioned here, you'll get a compilation error
   onClick: () => void; // when clicked what will happen
 }
 
