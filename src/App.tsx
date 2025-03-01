@@ -8,11 +8,11 @@ function App() {
   return (
     // the conditional rendering happens only when the alertVisisble = true
     <div>
-      {alertVisisble && <Alert>my Alert</Alert>}
+      {alertVisisble && <Alert onClose = {() => SetAlertvisibility(false)}>my Alert</Alert>}
       <Button
         color="success"
         onClick={() =>
-          SetAlertvisibility(!alertVisisble)
+          SetAlertvisibility(true)
         } /* this will keep toggling the true-false values each time clicked, and that will result in updating the DOM on our page */
       >
         This is a button!
