@@ -1,19 +1,13 @@
-import ListGroup from "./components/ListGroup" // we need this one this time
+import Alert from "./components/Alert"; // we need this one this time
 
 function App() {
-
-  let items = [
-    // for a dynamic showcase of data in our listgroup
-    "Youcef",
-    "Ahmed",
-    "Zaki",
-  ]; // we bring the list here in order for us to pass it directly
-
-  const handleSelectItem = (item: string) => {
-    console.log(item);
-  } // always better to have a seperate event handler
-  
-  return <div><ListGroup items={items} heading="List of names" onSelectItem={handleSelectItem}/></div> // we pass the arguments just like setting the html attributes
+  return ( // children are passed inside the opening and closing tags of a component
+    <div>
+      <Alert /*text="hello there!" if you work with text prop */>
+        Hello world! 
+      </Alert>
+    </div>
+  );
 }
 
-export default App // for it to be used somewhere else
+export default App; // for it to be used somewhere else
