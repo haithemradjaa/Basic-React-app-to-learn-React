@@ -1,9 +1,10 @@
 // go ahead and install ES7+ React/redux... extention on vs code to have a new shortcut and other features
 // the shortcut we want is 'rafce' short for react arrow function component export
 
+import { ReactNode } from "react";
+
 interface AlertProps {
-  children : string; // a special prop that all components have
-  // text : string; // you can use this as a simple argument to pass or use children prop
+  children : ReactNode; // this is a class that lets us pass html children to a component
 }
 
 const Alert = ({children}: AlertProps) => {
